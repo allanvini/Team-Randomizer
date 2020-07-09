@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Team Randomize</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+	<div class="container">
+		<h1 class="text-center m-5 text-white">
+			Team Randomizer
+		</h1>
+	</div>
+
+	<div class="container" align="center">
+		<h4 class="text-center m-5 text-white">
+			Insert the players names below and click Sort!
+		</h4>
+		<input id="players" class="form-control form-control-lg" type="text" placeholder="">
+		<button id="sort" type="button" class="btn btn-primary m-5">SORT</button>
+	</div>
+
+	<div class="container" align="center">
+		<div class="row">
+
+			<div class="col-sm">
+
+				<table class="table table-hover">
+
+					<thread>
+						<tr class="header">
+							<th scope="col" class="text-center text-white">Team 1</th>
+						</tr>
+					</thread>
+
+					<tbody id="T1" class="text-white">
+						
+					</tbody>
+
+				</table>
+				
+			</div>
+
+			<div class="col-sm">
+				
+				<table class="table table-hover">
+
+					<thread>
+						<tr class="header">
+							<th scope="col" class="text-center text-white">Team 2</th>
+						</tr>
+					</thread>
+					
+					<tbody id="T2" class="text-white">
+						
+					</tbody>
+
+				</table>
+
+			</div>
+			
+		</div>
+	</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/scripts.js"></script>
+  </body>
+</html>
