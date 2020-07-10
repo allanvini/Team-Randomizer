@@ -36,7 +36,6 @@ button.addEventListener('click', ()=>{
         }
     }
 
-    //console.log(playersArray);
 })
 
 function shuffle(array) {
