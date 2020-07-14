@@ -8,17 +8,17 @@ let listT2 = document.getElementById('T2');
 button.addEventListener('click', ()=>{
     let players = document.getElementById('players').value.split(',');
     let playersArray = [];
-
-    for (let index = 0; index < players.length; index++){
-        playersArray.push(players[index].trim());
-    }    
+    
+    for (player of players){
+        playersArray.push(player.trim());
+    }
 
     if ((playersArray.length%2)!=0){
 
         alert("You must have an even number of players to complete the teams!");
 
     } else {
-
+        console.log (playersArray);
         playersArray = shuffle(playersArray);
 
         renderT1(listT1, playersArray);
