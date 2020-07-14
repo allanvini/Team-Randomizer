@@ -13,26 +13,33 @@ button.addEventListener('click', ()=>{
         playersArray.push(players[index].trim());
     }
 
-    playersArray = shuffle(playersArray);
+    console.log(playersArray.length);
+    
 
-    listT1.innerHTML = "";
-    listT2.innerHTML = "";
+    if ((playersArray.length%2)!=0){
+        alert("You must have an even number of players to complete the teams!");
+    } else {
+        playersArray = shuffle(playersArray);
 
-    for (let index = 0; index < playersArray.length; index++){
-        if (index < 5){
-            let row = document.createElement('tr')
-            let player = document.createElement('td');
-            player.setAttribute('class', 'text-center');
-            player.textContent = playersArray[index];
-            row.appendChild(player);
-            listT1.appendChild(row);
-        } else {
-            let row = document.createElement('tr')
-            let player = document.createElement('td');
-            player.setAttribute('class', 'text-center');
-            player.textContent = playersArray[index];
-            row.appendChild(player);
-            listT2.appendChild(row);
+        listT1.innerHTML = "";
+        listT2.innerHTML = "";
+
+        for (let index = 0; index < playersArray.length; index++){
+            if (index < (playersArray.length/2)){
+                let row = document.createElement('tr')
+                let player = document.createElement('td');
+                player.setAttribute('class', 'text-center');
+                player.textContent = playersArray[index];
+                row.appendChild(player);
+                listT1.appendChild(row);
+            } else {
+                let row = document.createElement('tr')
+                let player = document.createElement('td');
+                player.setAttribute('class', 'text-center');
+                player.textContent = playersArray[index];
+                row.appendChild(player);
+                listT2.appendChild(row);
+            }
         }
     }
 
@@ -54,5 +61,5 @@ function shuffle(array) {
     }
   
     return array;
-  }
+}
   
