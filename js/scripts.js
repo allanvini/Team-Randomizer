@@ -14,33 +14,52 @@ button.addEventListener('click', ()=>{
     }    
 
     if ((playersArray.length%2)!=0){
+
         alert("You must have an even number of players to complete the teams!");
+
     } else {
+
         playersArray = shuffle(playersArray);
 
-        listT1.innerHTML = "";
-        listT2.innerHTML = "";
-
-        for (let index = 0; index < playersArray.length; index++){
-            if (index < (playersArray.length/2)){
-                let row = document.createElement('tr')
-                let player = document.createElement('td');
-                player.setAttribute('class', 'text-center');
-                player.textContent = playersArray[index];
-                row.appendChild(player);
-                listT1.appendChild(row);
-            } else {
-                let row = document.createElement('tr')
-                let player = document.createElement('td');
-                player.setAttribute('class', 'text-center');
-                player.textContent = playersArray[index];
-                row.appendChild(player);
-                listT2.appendChild(row);
-            }
-        }
+        renderT1(listT1, playersArray);
+        renderT2(listT2, playersArray);
     }
 
 })
+
+function renderT1(T1, players){
+
+    T1.innerHTML = "";
+
+    for (let index = 0; index < (players.length/2); index++){
+
+        let row = document.createElement('tr')
+        let player = document.createElement('td');
+        player.setAttribute('class', 'text-center');
+        player.textContent = players[index];
+        row.appendChild(player);
+        T1.appendChild(row);
+
+    }
+
+}
+
+function renderT2(T2, players){
+
+    T2.innerHTML = "";
+
+    for (let index = (players.length/2); index < players.length; index++){
+
+        let row = document.createElement('tr')
+        let player = document.createElement('td');
+        player.setAttribute('class', 'text-center');
+        player.textContent = players[index];
+        row.appendChild(player);
+        T2.appendChild(row);
+
+    }
+
+}
 
 function shuffle(array) {
     let m = array.length, t, i;
@@ -59,4 +78,3 @@ function shuffle(array) {
   
     return array;
 }
-  
