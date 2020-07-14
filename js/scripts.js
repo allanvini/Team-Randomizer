@@ -11,10 +11,7 @@ button.addEventListener('click', ()=>{
 
     for (let index = 0; index < players.length; index++){
         playersArray.push(players[index].trim());
-    }
-
-    console.log(playersArray.length);
-    
+    }    
 
     if ((playersArray.length%2)!=0){
         alert("You must have an even number of players to complete the teams!");
