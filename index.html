@@ -7,24 +7,37 @@
 
     <title>Team Randomize</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link href="css/style.css" rel="stylesheet">
 
   </head>
   <body>
 
-	<div class="container">
+	<div class="container" align="center">
 		<h1 class="text-center m-5 text-white">
 			Team Randomizer
 		</h1>
-	</div>
-
-	<div class="container" align="center">
 		<h4 class="text-center m-5 text-white">
-			Insert the players names below separated by a comma and click Sort!
+			Insert the players names below (separated by ",") and click Sort!
 		</h4>
-		<input id="players" class="form-control form-control-lg" type="text" placeholder="">
-		<button id="sort" type="button" class="btn btn-primary m-5">SORT</button>
+		<input id="players" class="form-control form-control-lg" type="text" placeholder="Player 1, Player 2...">
+		<button id="sort" type="button" class="btn m-5">SORT!</button>
+
+		<div class="alert alert-warning alert-dismissible fade show text-left" role="alert" style="display: none" id="fail">
+			<strong>Impossible to fill the teams -</strong> you need to put an even number of players to complete the teams
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="flase">&times;</span>
+			</button>
+		</div>
+
+		<div class="alert alert-success alert-dismissible fade show text-left" role="alert" style="display: none" id="success">
+			<strong>Done! -</strong> the teams has been sorted
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="flase">&times;</span>
+			</button>
+		</div>
+
 	</div>
 
 	<div class="container" align="center">
@@ -32,7 +45,7 @@
 
 			<div class="col-sm">
 
-				<table class="table table-hover">
+				<table class="table">
 
 					<thread>
 						<tr class="header">
@@ -50,7 +63,7 @@
 
 			<div class="col-sm">
 				
-				<table class="table table-hover">
+				<table class="table">
 
 					<thread>
 						<tr class="header">
@@ -69,8 +82,9 @@
 		</div>
 	</div>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<script src="js/scripts.js"></script>
   </body>
 </html>

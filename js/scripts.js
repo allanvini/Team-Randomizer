@@ -4,6 +4,10 @@ let listT1 = document.getElementById('T1');
 
 let listT2 = document.getElementById('T2');
 
+let failAlert = document.getElementById('fail');
+
+let successAlert = document.getElementById('success');
+
 
 button.addEventListener('click', ()=>{
     let players = document.getElementById('players').value.split(',');
@@ -15,10 +19,20 @@ button.addEventListener('click', ()=>{
 
     if ((playersArray.length%2)!=0){
 
-        alert("You must have an even number of players to complete the teams!");
+        showElement(failAlert);
+
+        setTimeout(()=>{
+            hideElement(failAlert);
+        }, 5000)
 
     } else {
-        console.log (playersArray);
+
+        showElement(successAlert);
+
+        setTimeout(()=>{
+            hideElement(successAlert);
+        }, 5000);
+
         playersArray = shuffle(playersArray);
 
         renderT1(listT1, playersArray);
@@ -77,4 +91,12 @@ function shuffle(array) {
     }
   
     return array;
+}
+
+function showElement(element){
+    element.style.display = 'block';
+}
+
+function hideElement(element){
+    element.style.display = 'none';
 }

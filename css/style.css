@@ -1,30 +1,21 @@
-@font-face{
-    font-family: 'frost bite';
-    src: url('../fonts/FROSTBITE-Narrow.ttf');
-    font-weight: normal;
-    font-style: normal;
-}
 body {
     background: url('https://images.hdqwalls.com/wallpapers/valorant-2020-4k-0f.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    font-family: 'frost bite';
+    font-family: 'Play', sans-serif;
   }
 
-  button {
-      font-family: 'frost bite';
+  #sort {
+      background-color: rgb(255, 53, 53);
+      color: white;
+      font-weight: bold;
+      transition: 0.5s;
   }
 
-  h1 {
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #000;
-  }
-
-  h4 {
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #000;
+  #sort:hover{
+    box-shadow: 0px 0px 30px red;
   }
 
   table {
@@ -37,3 +28,9 @@ body {
     border-radius: 2px;
   }
   
+  .container {
+    background-color: rgba(0, 0, 0, 0.650);
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 5%;
+  }
