@@ -117,7 +117,8 @@ function renderPlayers(grid, players){
 
         spanButton.setAttribute('aria-hidden','false');
         spanButton.appendChild(document.createTextNode('x'));
-        spanButton.setAttribute('onclick', `deletePlayer(${pos})`);
+        
+        excludeButton.setAttribute('onclick', `deletePlayer(${pos})`);
 
         excludeButton.appendChild(spanButton);
 
