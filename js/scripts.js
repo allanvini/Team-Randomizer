@@ -16,19 +16,16 @@ let listT2 = document.getElementById('T2');
 
 let playersArray = [];
 
+window.addEventListener('keydown', (event)=>{
+    let keyCheck = event.keyCode;
+    if (keyCheck == 13){
+        insertPlayer();
+    }
+})
+
 insertButton.addEventListener('click', ()=>{
 
-    let newPlayer = document.getElementById('newPlayer');
-
-    if(newPlayer.value == ''){
-        showElement(noPlayerAlert);
-        hideElement(noPlayerAlert);
-    } else {
-        playersArray.push(newPlayer.value.trim());
-        newPlayer.value = '';
-        console.log(playersArray);
-        renderPlayers(playersNicknames, playersArray);
-    }
+    insertPlayer();
 
 });
 
@@ -117,7 +114,7 @@ function renderPlayers(grid, players){
 
         spanButton.setAttribute('aria-hidden','false');
         spanButton.appendChild(document.createTextNode('x'));
-        
+
         excludeButton.setAttribute('onclick', `deletePlayer(${pos})`);
 
         excludeButton.appendChild(spanButton);
@@ -168,4 +165,18 @@ function hideElement(element){
 
 function insertPlayer(nick){
     return nick.value.trim();
+}
+
+function insertPlayer(){
+    let newPlayer = document.getElementById('newPlayer');
+
+    if(newPlayer.value == ''){
+        showElement(noPlayerAlert);
+        hideElement(noPlayerAlert);
+    } else {
+        playersArray.push(newPlayer.value.trim());
+        newPlayer.value = '';
+        console.log(playersArray);
+        renderPlayers(playersNicknames, playersArray);
+    }
 }
