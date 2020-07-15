@@ -5,32 +5,69 @@ body {
     background-size: cover;
     -o-background-size: cover;
     font-family: 'Play', sans-serif;
-  }
+}
 
-  #sort {
+#playersNicknames {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 6px;
+}
+
+.playerNickname {
+  display: block;
+  color: white;
+  float: left;
+}
+
+.exclude {
+  border: none;
+  color: rgb(255, 0, 0);
+  background-color: rgba(0, 0, 0, 0.325);
+  font-weight: bold;
+  font-size: 18px;
+  float: right;
+}
+
+#sort {
       background-color: rgb(255, 53, 53);
       color: white;
       font-weight: bold;
       transition: 0.5s;
-  }
+}
 
-  #sort:hover{
+#sort:hover{
     box-shadow: 0px 0px 30px red;
-  }
+}
 
-  table {
+#insert {
+  background-color: rgb(177, 255, 236);
+  color: rgb(0, 0, 0);
+  transition: 0.5s;
+}
+
+table {
       background-color: rgba(0, 0, 0, 0.493);
       border-radius: 2px;
-  }
+}
 
-  .header {
+.header {
     background-color: rgba(255, 0, 0, 0.493);
     border-radius: 2px;
-  }
+}
   
-  .container {
+.container {
     background-color: rgba(0, 0, 0, 0.650);
     border-radius: 5px;
     padding: 5px;
-    margin-top: 5%;
-  }
+    margin-top: 2.5%;
+}
+
+#newPlayer {
+  width: 300px;
+  text-align: center;
+}
+
+#app {
+  margin-top: auto;
+  margin-bottom: auto;
+}

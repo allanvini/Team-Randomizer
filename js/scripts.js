@@ -1,37 +1,52 @@
-let button = document.getElementById('sort');
+let insertButton = document.getElementById('insert');
 
-let listT1 = document.getElementById('T1');
+let noPlayerAlert = document.getElementById('noPlayer');
 
-let listT2 = document.getElementById('T2');
+let playersNicknames = document.getElementById('playersNicknames');
+
+let sort = document.getElementById('sort');
 
 let failAlert = document.getElementById('fail');
 
 let successAlert = document.getElementById('success');
 
+let listT1 = document.getElementById('T1');
 
-button.addEventListener('click', ()=>{
-    let players = document.getElementById('players').value.split(',');
-    let playersArray = [];
-    
-    for (player of players){
-        playersArray.push(player.trim());
+let listT2 = document.getElementById('T2');
+
+let playersArray = [];
+
+insertButton.addEventListener('click', ()=>{
+
+    let newPlayer = document.getElementById('newPlayer');
+
+    if(newPlayer.value == ''){
+        showElement(noPlayerAlert);
+        hideElement(noPlayerAlert);
+    } else {
+        playersArray.push(newPlayer.value.trim());
+        newPlayer.value = '';
+        console.log(playersArray);
+        renderPlayers(playersNicknames, playersArray);
     }
 
-    if ((playersArray.length%2)!=0){
+});
+
+
+sort.addEventListener('click', ()=>{
+
+    if ((playersArray.length%2)!=0 || playersArray.length == 0){
 
         showElement(failAlert);
 
-        setTimeout(()=>{
-            hideElement(failAlert);
-        }, 5000)
+        hideElement(failAlert);
+
 
     } else {
 
         showElement(successAlert);
 
-        setTimeout(()=>{
-            hideElement(successAlert);
-        }, 5000);
+        hideElement(successAlert);
 
         playersArray = shuffle(playersArray);
 
@@ -75,6 +90,53 @@ function renderT2(T2, players){
 
 }
 
+function renderPlayers(grid, players){
+
+    grid.innerHTML = '';
+
+    for (player of players){
+
+        let playerContainer = document.createElement('div');
+        playerContainer.setAttribute('class', 'playerNickname');
+
+        let playerNickname = document.createElement('div');
+        playerNickname.setAttribute('id', 'player');
+        playerNickname.setAttribute('class', 'container');
+
+
+        let nickName = document.createElement('strong');
+        nickName.appendChild(document.createTextNode(player));
+
+        let excludeButton = document.createElement('button');
+        excludeButton.setAttribute('type', 'button');
+        excludeButton.setAttribute('class', 'exclude');
+
+        let spanButton = document.createElement('span');
+
+        let pos = players.indexOf(player);
+
+        spanButton.setAttribute('aria-hidden','false');
+        spanButton.appendChild(document.createTextNode('x'));
+        spanButton.setAttribute('onclick', `deletePlayer(${pos})`);
+
+        excludeButton.appendChild(spanButton);
+
+        playerContainer.appendChild(playerNickname);
+
+        playerNickname.appendChild(nickName);
+        playerNickname.appendChild(excludeButton);
+
+        grid.appendChild(playerContainer);
+        
+    }
+
+}
+
+function deletePlayer(pos){
+    playersArray.splice(pos, 1);
+    renderPlayers(playersNicknames, playersArray);
+}
+
 function shuffle(array) {
     let m = array.length, t, i;
   
@@ -98,5 +160,11 @@ function showElement(element){
 }
 
 function hideElement(element){
-    element.style.display = 'none';
+    setTimeout(()=>{
+        element.style.display = 'none';
+    }, 5000);
+}
+
+function insertPlayer(nick){
+    return nick.value.trim();
 }

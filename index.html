@@ -13,74 +13,96 @@
 
   </head>
   <body>
-
-	<div class="container" align="center">
-		<h1 class="text-center m-5 text-white">
-			Team Randomizer
-		</h1>
-		<h4 class="text-center m-5 text-white">
-			Insert the players names below (separated by ",") and click Sort!
-		</h4>
-		<input id="players" class="form-control form-control-lg" type="text" placeholder="Player 1, Player 2...">
-		<button id="sort" type="button" class="btn m-5">SORT!</button>
-
-		<div class="alert alert-warning alert-dismissible fade show text-left" role="alert" style="display: none" id="fail">
-			<strong>Impossible to fill the teams -</strong> you need to put an even number of players to complete the teams
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				<span aria-hidden="flase">&times;</span>
-			</button>
-		</div>
-
-		<div class="alert alert-success alert-dismissible fade show text-left" role="alert" style="display: none" id="success">
-			<strong>Done! -</strong> the teams has been sorted
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				<span aria-hidden="flase">&times;</span>
-			</button>
-		</div>
-
-	</div>
-
-	<div class="container" align="center">
-		<div class="row">
-
-			<div class="col-sm">
-
-				<table class="table">
-
-					<thread>
-						<tr class="header">
-							<th scope="col" class="text-center text-white">Team 1</th>
-						</tr>
-					</thread>
-
-					<tbody id="T1" class="text-white">
-						
-					</tbody>
-
-				</table>
+	<div id="app">
+		<div class="container" align="center">
+			<h1 class="text-center m-5 text-white">
+				Team Randomizer
+			</h1>
+			<p class="text-center m-5 text-white">
+				Insert the player nickname below and click insert
+			</p>
+	
+			<input id="newPlayer" class="form-control form-control-lg" type="text" placeholder="nickname">
+			<button id="insert" type="button" class="btn m-5">insert new player</button>
+	
+			<div class="alert alert-warning alert-dismissible fade show text-left" role="alert" style="display: none" id="noPlayer">
+				<strong>Impossible add -</strong> you need to put a nickname to insert in the lobby
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="flase">&times;</span>
+				</button>
+			</div>
+	
+			<div id="playersNicknames">
+	
+	
 				
 			</div>
-
-			<div class="col-sm">
-				
-				<table class="table">
-
-					<thread>
-						<tr class="header">
-							<th scope="col" class="text-center text-white">Team 2</th>
-						</tr>
-					</thread>
+	
+			<p class="text-center m-5 text-white">
+				when all players be ready click Sort!
+			</p>
+	
+			<button id="sort" type="button" class="btn m-5">SORT!</button>
+	
+			<div class="alert alert-warning alert-dismissible fade show text-left" role="alert" style="display: none" id="fail">
+				<strong>Impossible to fill the teams -</strong> you need to put an even number of players to complete the teams
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="flase">&times;</span>
+				</button>
+			</div>
+	
+			<div class="alert alert-success alert-dismissible fade show text-left" role="alert" style="display: none" id="success">
+				<strong>Done! -</strong> the teams has been sorted
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="flase">&times;</span>
+				</button>
+			</div>
+	
+		</div>
+	
+		<div class="container" align="center">
+			<div class="row">
+	
+				<div class="col-sm">
+	
+					<table class="table">
+	
+						<thread>
+							<tr class="header">
+								<th scope="col" class="text-center text-white">Team 1</th>
+							</tr>
+						</thread>
+	
+						<tbody id="T1" class="text-white">
+							
+						</tbody>
+	
+					</table>
 					
-					<tbody id="T2" class="text-white">
+				</div>
+	
+				<div class="col-sm">
+					
+					<table class="table">
+	
+						<thread>
+							<tr class="header">
+								<th scope="col" class="text-center text-white">Team 2</th>
+							</tr>
+						</thread>
 						
-					</tbody>
-
-				</table>
-
+						<tbody id="T2" class="text-white">
+							
+						</tbody>
+	
+					</table>
+	
+				</div>
+				
 			</div>
-			
 		</div>
 	</div>
+	
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
