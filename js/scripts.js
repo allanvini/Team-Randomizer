@@ -98,7 +98,6 @@ function renderPlayers(grid, players){
 
         let playerNickname = document.createElement('div');
         playerNickname.setAttribute('id', 'player');
-        playerNickname.setAttribute('class', 'container');
 
 
         let nickName = document.createElement('strong');
@@ -122,6 +121,7 @@ function renderPlayers(grid, players){
         playerContainer.appendChild(playerNickname);
 
         playerNickname.appendChild(nickName);
+
         playerNickname.appendChild(excludeButton);
 
         grid.appendChild(playerContainer);
